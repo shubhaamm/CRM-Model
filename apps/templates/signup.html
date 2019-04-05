@@ -1,0 +1,78 @@
+{% extends 'shubh.html'  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       {% block title %}
+    <meta charset="UTF-8">
+    <title>Signup</title>
+     <style>
+        .sign{
+        margin : 70px 222px 88px 603px;
+        }
+        .sss{
+         font :16px;
+		color:green;
+}
+ .ssss{
+         font :16px;
+		color:green;
+
+}
+ .sssss{
+         font :16px;
+		color:green;
+}
+
+
+
+.btn{
+margin: 9px 4px 5px 52px;
+padding:5px;
+
+}
+
+
+
+    </style>
+    {% load static %}
+       {% endblock %}
+</head>
+<body>
+{% block content %}
+<h1 style="margin: 13px 2px 3px 365px; font-size:48px;">SIGNUP FORM FOR STUDENT</h1>
+
+</br>
+<div class="block">
+<form method="POST" action="{% url 'signup' %}">
+    <div class="sign" >
+    {% csrf_token %}
+        <p style="color:red; font-size;19px;"> {{ error }} </p>
+        </br>
+    </br>
+
+    USERNAME :
+</br>
+    <input type="text" name="username" required class="sss" /></br>
+    </br>
+     EMAIL-ID :
+</br>
+    <input type="email" name="email" required class="emss" /></br>
+    </br>
+    PASSWORD :
+    </br><input type="password" name="password1" required class="ssss" /></br>
+    </br>
+    CONFIRM PASSWORD :
+    </br><input type="password" name="password2" required class="sssss"/></br>
+    </br>
+        <input type="submit" class="btn" value="Signup"/></br>
+
+
+    </div>
+</form>
+
+    </div>
+
+{% endblock %}
+
+</body>
+</html>

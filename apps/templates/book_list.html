@@ -1,0 +1,49 @@
+{% extends 'shubh.html' %}
+<html>
+<head>
+    {% block title %}
+  <title>Upload book</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% endblock %}
+</head>
+<body>
+</br>
+</br>
+{% block content %}
+</br>
+</br>
+<h1>Files</h1>
+  <div class="container">
+
+      <form method="get" action="">
+       <input type="button" class="btn btn-info btn-block" onclick="location.href='{% url 'Aa' %}';" value="TOP 10 CUSTOMERS" />
+     </form></br>
+
+
+    <form method="get" action="">
+         <input type="button" class="btn btn-info btn-block" onclick="location.href='{% url 'Bb' %}';" value="CHAIN WISE SALES" />
+    </form></br>
+
+    <form method="get" action="">
+        <input type="button" class="btn btn-info btn-block" onclick="location.href='{% url 'Cc' %}';" value="TOP 10 BRANDS" />
+    </form></br>
+
+    <form method="get" action="">
+      <input type="button" class="btn btn-info btn-block" onclick="location.href='{% url 'Dd' %}';" value="TOP 10 COMPANIES" />
+    </form></br>
+
+    <form method="get" action="">
+       <input type="button" class="btn btn-info btn-block" onclick="location.href='{% url 'Ee' %}';" value="EACH CHAIN TOP 10 CUSTOMER" />
+    </form></br>
+
+    <form method="get" action="">
+       <input type="button" class="btn btn-info btn-block" onclick="location.href='{% url 'Ff' %}';" value="EACH CUSTOMER MOST BOUGHT BRAND" />
+    </form></br>
+
+
+
+</div>
+
+{% endblock %}
+</body>
+</html>
