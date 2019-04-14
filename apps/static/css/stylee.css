@@ -73,54 +73,13 @@ nav ul li a{
     padding: 30px 10px 16px 10px;
 
 }
-.fwimage {
+.image {
     font-family:Impact;
-	background-image:url('{% static 'b1.jpg' %}');
+	!background-image:url('{% static 'b1.jpg' %}');
 	width: 100%;
 	height: 679px;
 	background-repeat: repeat-x;
-	!background-size: contain;
-	!margin: 0px 98px 1196px 6px;
-	!padding: 100px 50px 90px 80px;
-	!border-radius: 5;
 
-
-}
-
-.homesubline {
-	!font-family: 'Raleway', sans-serif;
-	margin: 79px 12px 12px -420px;
-	padding: 9% 5% 0% 55%;
-	font-size: 49px;
-	color: pink;
-
-
-}
-
-.homedesign{
-	font-family: 'Raleway', sans-serif;
-	margin: 0.5px 0px 0px -355px;
-	font-size: 75px;
-	color: white;
-	background-color: rgba(0,0,0,0.4);
-	display: inline-block;
-
-}
-
-
-.homephotography{
-    margin: 16px 6px 9px 445px;
-	font-size: 37px;
-	color: pink;
-	display: inline-block;
-
-}
-
-
-}
-!button:hover{
-!	background-color: pink;
-1	opacity: 0.5;
 }
 
 #fav {
