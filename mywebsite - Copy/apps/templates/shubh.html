@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	   {% block title %}
+	<title>Shubham Singhal|Photography|Music|Design</title>
+	{% endblock %}
+
+	{% load static  %}
+	
+    <link href="{% static 'css/stylee.css' %}" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<style>
+		.btzzzz{
+	margin: 0% 0% 0% 55% ;
+	background: #e63900;
+	color: black;
+	border:none;
+	!border-radius: 70%;
+	height: 50px;
+	font-size: 1.4em;
+	padding: 0 1em;
+	cursor: pointer;
+	outline: none;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 900;
+	opacity:0.6;
+	}
+
+	.taj{
+	margin: 2% 0% 0% 55% ;
+	background: #e63900;
+	color: black;
+	border:none;
+	!border-radius: 70%;
+	height: 50px;
+	font-size: 1.4em;
+	padding: 0 1em;
+	cursor: pointer;
+	outline: none;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 900;
+	opacity:0.6;
+	}
+
+	.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color:rgb(129, 10, 66);
+  float: left;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+	</style>
+	
+</head>
+<body style="//background-image:url('{% static 'b1.jpg' %}')">
+
+	<header>
+		<nav>
+			<h1>Shubham Singhal</h1>
+			<ul id="nav">
+				<li><a class="homered" href="{% url 'mywebsite' %}">HOME</a></li>
+				<li><a class="homeblack" href="{% url 'portfolio' %}">PORTFOLIO</a></li>
+				<li><a class="homeblack" href="{% url 'about' %}">ABOUT ME</a></li>
+				<li><a class="homeblack" href="{% url 'contact' %}">CONTACT</a></li>
+				 {% if user.is_authenticated %}
+				<li><a class="logout"  href="javascript:{document.getElementById('logout').submit()}">Logout</a></li>
+                  <form id="logout" method="POST" action="{% url 'logout' %}">
+                      {% csrf_token %}
+                      <input type="hidden" />
+                  </form>
+                  {% else %}
+
+				<li><a class="login"     href="{% url 'login' %}">Login</a></li>
+				<li><a class="signup"    href="{% url 'signup' %}">Signup</a></li>
+
+                  {% endif %}
+
+			</ul>
+		</nav>
+
+            <ul id="fav">
+				<li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true" id="logo1"></i></a></i></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true" id="logo2"></i></a></li>
+				<li><a href="{% url 'contact' %}"><i class="fa fa-instagram" aria-hidden="true" id="logo3"></i></a></li>
+
+			</ul>
+	</header>
+	{% block content %}
+
+
+
+	<div class="divider"></div>
+	<div class="fwimage">
+		<h2 class="homesubline">HI! MY NAME IS <span style="color:maroon">SHUBHAM SINGHAL</span> AND I LOVE</h2>
+		<h1 class="homedesign">DESIGN & </h1>
+		<h1 class="homephotography">PHOTOGRAPHY</h1>
+		<br>
+		<form method="get" action="{% url 'image' %}" >
+			{% csrf_token %}
+		<button class="btzzzz">Click to see my photography</button>
+		</form>
+
+
+		<form method="get" action="{% url 'tajm' %}" >
+			{% csrf_token %}
+		<button class="taj">Click to see TajMahal photos</button>
+		</form>
+
+</div>
+
+		<div class="pagination">
+		  <a href="#">&laquo;</a>
+		  <a href="{% url 'mywebsite' %}">1</a>
+		  <a href="{% url 'about' %}" class="active">2</a>
+		  <a href="{% url 'contact' %}">3</a>
+		  <a href="{% url 'portfolio' %}">4</a>
+		  <a href="{% url 'image' %}">5</a>
+		  <a href="{% url 'tajm' %}">6</a>
+		  <a href="#">&raquo;</a>
+		</div>
+		
+		
+	
+
+{% endblock %}
+
+
+</body>
+</html>
